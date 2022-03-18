@@ -1,0 +1,98 @@
+{% extends 'blogapp\base.html' %}
+
+
+{% block title %}
+    <title>Home</title>
+{% endblock title %}
+    
+
+{% block content %}
+<div class="container">
+    <div>
+        <br>
+        <h1 style= "color: brown; text-align: center;">Hello, My First Page in DjangO!!!</h1>
+        <br>
+        <h1 style="text-align: center;">Hello, This is My Landing Page</h1>
+        <br>
+        <br>
+        <p style="font-size: large; text-align: center;color: brown">{{today}}</p>
+    </div>
+
+    <div>
+        <h2 style="text-align: center;">All DATA</h2>
+        {% for item in posts %}
+        <ul>
+            <li style="font-weight: bold;">Title : {{item.title}}</li>
+            <li>ID : {{item.id}}</li>
+            <li>Post : {{item.post}}</li>
+            <li>Created Date : {{item.date_created}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <div>
+        <h2 style="text-align: center;">Specific Row</h2>
+        <p>
+            <li style="font-weight: bold;">Title : {{single_row.title}}</li>
+            <li>ID : {{single_row.id}}</li>
+            <li>Post : {{single_row.post}}</li>
+            <li>Created Date : {{single_row.date_created}}</li>
+        </p>
+    </div>
+    <br>
+    <div>
+        <h2 style="text-align: center;">Call Rows</h2>
+        {% for row in rows %}
+        <ul>
+            <li style="font-weight: bold;">Title : {{row.title}}</li>
+            <li>ID : {{row.id}}</li>
+            <li>Post : {{row.post}}</li>
+            <li>Created Date : {{row.date_created}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    <br>
+    <div>
+        <h2 style="text-align: center;">Reverse Post</h2>
+        {% for item in reversed_posts %}
+        <ul>
+            <li style="font-weight: bold;">Title : {{item.title}}</li>
+            <li>ID : {{item.id}}</li>
+            <li>Post : {{item.post}}</li>
+            <li>Created Date : {{item.date_created}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    <br>
+    <div>
+        <h2 style="text-align: center;">Specific Columns</h2>
+        {% for col in columns %}
+        <ul>
+            <li style="font-weight: bold;">Title : {{col.title}}</li>
+            <li>ID : {{col.id}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    <br>
+    <div>
+        <h2 style="text-align: center;">First Row</h2>
+        <p>
+            <li style="font-weight: bold;">Title : {{ first_row.title}}</li>
+            <li>ID : {{first_row.id}}</li>
+            <li>Post : {{first_row.post}}</li>
+            <li>Created Date : {{first_row.date_created}}</li>
+        </p>
+    </div>
+    <br>
+    <div>
+        <h2 style="text-align: center;">Last Row</h2>
+        <p>
+            <li style="font-weight: bold;">Title : {{ last_row.title}}</li>
+            <li>ID : {{last_row.id}}</li>
+            <li>Post : {{last_row.post}}</li>
+            <li>Created Date : {{last_row.date_created}}</li>
+        </p>
+    </div>
+</div>
+{% endblock content %}

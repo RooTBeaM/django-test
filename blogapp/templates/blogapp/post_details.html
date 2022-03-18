@@ -1,0 +1,36 @@
+{% extends 'blogapp\base.html' %}
+
+
+{% block title %}
+    <title>Post Detail</title>
+{% endblock title %}
+    
+
+{% block content %}
+<div class="container">
+    <div>
+        <br>
+        <h1 style= "color: brown; text-align: center;">Hello, My First Page in DjangO!!!</h1>
+        <br>
+        <h1 style="text-align: center;">Hello, This is My Landing Page</h1>
+        <br>
+        <br>
+        <p style="font-size: large; text-align: center;color: brown">{{today}}</p>
+    </div>
+    <br>
+    <div>
+        <h2 style="text-align: center;">{{single_row.title}}</h2>
+        <p style="text-align: center;">
+            <img src="{{single_row.feild_img.url}}" alt="{{single_row.title}}" width="400" height="300">
+            <br>
+            ID : {{single_row.id}}
+            <br>
+            Post : {{single_row.post|safe}}
+            <br>
+            Created Date : {{single_row.date_created}}
+            <br>
+            Updated Date : {{single_row.date_updated}}
+        </p>
+    </div>
+</div>
+{% endblock content %}
